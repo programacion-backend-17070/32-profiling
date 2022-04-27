@@ -19,7 +19,6 @@ if (modoCluster && cluster.isMaster) {
   console.log("soy el proceso primario", process.pid)
 
 } else {
-  
 
   const PORT = process.env.PORT || 3030
 
