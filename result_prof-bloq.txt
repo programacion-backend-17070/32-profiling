@@ -1,0 +1,629 @@
+Statistical profiling result from blog-v8.log, (727 ticks, 3 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+     25    3.4%          /usr/lib/system/libsystem_pthread.dylib
+     18    2.5%          /usr/lib/system/libsystem_kernel.dylib
+     15    2.1%          /usr/lib/system/libsystem_c.dylib
+     13    1.8%          /usr/lib/system/libsystem_malloc.dylib
+      6    0.8%          /usr/lib/libc++.1.dylib
+      3    0.4%          /usr/lib/system/libsystem_platform.dylib
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      2    0.3%    0.3%  Function: ^writeOrBuffer node:internal/streams/writable:365:23
+      1    0.1%    0.2%  LazyCompile: *normalizeString node:path:66:25
+      1    0.1%    0.2%  Function: ^writeHead node:_http_server:269:19
+      1    0.1%    0.2%  Function: ^socketOnDrain node:_http_server:559:23
+      1    0.1%    0.2%  Function: ^resolve node:path:1091:10
+      1    0.1%    0.2%  Function: ^processHeader node:_http_outgoing:501:23
+      1    0.1%    0.2%  Function: ^getProtohost /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/index.js:548:22
+      1    0.1%    0.2%  Function: ^getHighWaterMark node:internal/streams/state:19:26
+      1    0.1%    0.2%  Function: ^destroyHooksExist node:internal/async_hooks:487:27
+      1    0.1%    0.2%  Function: ^_storeHeader node:_http_outgoing:374:22
+      1    0.1%    0.2%  Function: ^Readable.resume node:internal/streams/readable:963:37
+      1    0.1%    0.2%  Function: ^Module._nodeModulePaths node:internal/modules/cjs/loader:629:37
+      1    0.1%    0.2%  Function: ^<anonymous> node:internal/validators:84:3
+
+ [C++]:
+   ticks  total  nonlib   name
+    226   31.1%   34.9%  T __kernelrpc_mach_port_get_context
+    220   30.3%   34.0%  t auto node::options_parser::OptionsParser<node::EnvironmentOptions>::Convert<node::DebugOptions>(node::options_parser::OptionsParser<node::DebugOptions>::Implication, node::options_parser::OptionsParser<node::DebugOptions>* (node::EnvironmentOptions::*)())
+     61    8.4%    9.4%  T node::native_module::NativeModuleEnv::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+     36    5.0%    5.6%  T node::contextify::ContextifyContext::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+     20    2.8%    3.1%  T _host_get_special_port
+     18    2.5%    2.8%  T _host_request_notification
+      8    1.1%    1.2%  t node::fs::WriteBuffer(v8::FunctionCallbackInfo<v8::Value> const&)
+      8    1.1%    1.2%  T node::fs::Close(v8::FunctionCallbackInfo<v8::Value> const&)
+      6    0.8%    0.9%  t node::fs::Open(v8::FunctionCallbackInfo<v8::Value> const&)
+      5    0.7%    0.8%  t node::fs::InternalModuleStat(v8::FunctionCallbackInfo<v8::Value> const&)
+      4    0.6%    0.6%  t std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> > std::__1::__pad_and_output<char, std::__1::char_traits<char> >(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> >, char const*, char const*, char const*, std::__1::ios_base&, char)
+      3    0.4%    0.5%  t std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long)
+      2    0.3%    0.3%  T node::binding::GetInternalBinding(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.2%  t void node::Buffer::(anonymous namespace)::StringWrite<(node::encoding)1>(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.2%  t void node::Buffer::(anonymous namespace)::StringSlice<(node::encoding)1>(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.2%  t non-virtual thunk to v8::internal::PointersUpdatingVisitor::~PointersUpdatingVisitor()
+      1    0.1%    0.2%  t node::fs::InternalModuleReadJSON(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.2%  t node::fs::FStat(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.2%  t node::(anonymous namespace)::Parser::Proxy<int (node::(anonymous namespace)::Parser::*)(char const*, unsigned long), &(node::(anonymous namespace)::Parser::on_header_value(char const*, unsigned long))>::Raw(llhttp__internal_s*, char const*, unsigned long)
+      1    0.1%    0.2%  t node::(anonymous namespace)::Parser::OnStreamAlloc(unsigned long)
+      1    0.1%    0.2%  T node::InternalCallbackScope::InternalCallbackScope(node::Environment*, v8::Local<v8::Object>, node::async_context const&, int)
+      1    0.1%    0.2%  T node::HandleWrap::Close(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.2%  T node::Emit(node::Environment*, double, node::AsyncHooks::Fields, v8::Local<v8::Function>)
+      1    0.1%    0.2%  T _mig_strncpy_zerofill
+      1    0.1%    0.2%  T _mach_msg_destroy
+      1    0.1%    0.2%  T _mach_get_times
+
+ [Summary]:
+   ticks  total  nonlib   name
+     14    1.9%    2.2%  JavaScript
+    630   86.7%   97.4%  C++
+     44    6.1%    6.8%  GC
+     80   11.0%          Shared libraries
+      3    0.4%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+    386  100.0%   53.1%  TOTAL
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+    226   31.1%  T __kernelrpc_mach_port_get_context
+
+    220   30.3%  t auto node::options_parser::OptionsParser<node::EnvironmentOptions>::Convert<node::DebugOptions>(node::options_parser::OptionsParser<node::DebugOptions>::Implication, node::options_parser::OptionsParser<node::DebugOptions>* (node::EnvironmentOptions::*)())
+     94   42.7%    t auto node::options_parser::OptionsParser<node::EnvironmentOptions>::Convert<node::DebugOptions>(node::options_parser::OptionsParser<node::DebugOptions>::Implication, node::options_parser::OptionsParser<node::DebugOptions>* (node::EnvironmentOptions::*)())
+      6    6.4%      Function: ^writevGeneric node:internal/stream_base_commons:122:23
+      5   83.3%        Function: ^Socket._writeGeneric node:net:769:42
+      5  100.0%          Function: ^Socket._writev node:net:801:36
+      5  100.0%            Function: ^doWrite node:internal/streams/writable:398:17
+      1   16.7%        LazyCompile: ~Socket._writeGeneric node:net:769:42
+      1  100.0%          LazyCompile: ~Socket._writev node:net:801:36
+      1  100.0%            LazyCompile: ~doWrite node:internal/streams/writable:398:17
+      5    5.3%      Function: ^Hash node:internal/crypto/hash:58:14
+      5  100.0%        Function: ^createHash node:crypto:129:20
+      5  100.0%          Function: ^entitytag /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/etag/index.js:39:20
+      5  100.0%            Function: ^etag /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/etag/index.js:70:15
+      4    4.3%      Function: ^send /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:111:25
+      4  100.0%        Function: ^sendStatus /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:369:37
+      4  100.0%          Function: ^<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/src/routes/file.js:18:28
+      4  100.0%            Function: ^handle /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/layer.js:86:49
+      4    4.3%      Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      2   50.0%        Function: ^resolveExports node:internal/modules/cjs/loader:472:24
+      2  100.0%          Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1   50.0%            LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1   50.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1   25.0%        LazyCompile: ~resolveExports node:internal/modules/cjs/loader:472:24
+      1  100.0%          Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%            LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1   25.0%        Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      1  100.0%          Function: ^trySelf node:internal/modules/cjs/loader:441:17
+      1  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      3    3.2%      Function: ^setHeader node:_http_outgoing:574:57
+      3  100.0%        Function: ^header /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:777:29
+      2   66.7%          Function: ^send /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:111:25
+      2  100.0%            Function: ^sendStatus /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:369:37
+      1   33.3%          Function: ^contentType /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:619:32
+      1  100.0%            Function: ^sendStatus /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:369:37
+      3    3.2%      Function: ^end node:_http_outgoing:833:45
+      3  100.0%        Function: ^send /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:111:25
+      3  100.0%          Function: ^sendStatus /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:369:37
+      3  100.0%            Function: ^<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/src/routes/file.js:18:28
+      3    3.2%      Function: ^emitReadable_ node:internal/streams/readable:574:23
+      3  100.0%        Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      3    3.2%      Function: ^_storeHeader node:_http_outgoing:374:22
+      3  100.0%        Function: ^writeHead node:_http_server:269:19
+      3  100.0%          Function: ^_implicitHeader node:_http_server:264:68
+      3  100.0%            Function: ^write_ node:_http_outgoing:730:16
+      2    2.1%      t auto node::options_parser::OptionsParser<node::EnvironmentOptions>::Convert<node::DebugOptions>(node::options_parser::OptionsParser<node::DebugOptions>::Implication, node::options_parser::OptionsParser<node::DebugOptions>* (node::EnvironmentOptions::*)())
+      1   50.0%        LazyCompile: ~read node:internal/modules/package_json_reader:16:14
+      1  100.0%          Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      1  100.0%            LazyCompile: ~resolveExports node:internal/modules/cjs/loader:472:24
+      1   50.0%        LazyCompile: ~parseQueryStringKeys /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/qs/lib/parse.js:150:46
+      1  100.0%          LazyCompile: ~module.exports /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/qs/lib/parse.js:239:27
+      1  100.0%            LazyCompile: ~parseExtendedQueryString /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/utils.js:289:34
+      2    2.1%      LazyCompile: ~WriteStream node:tty:85:21
+      2  100.0%        LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:41:35
+      1   50.0%          LazyCompile: ~getStdout node:internal/bootstrap/switches/is_main_thread:125:19
+      1  100.0%            LazyCompile: ~get node:internal/console/constructor:203:14
+      1   50.0%          LazyCompile: ~getStderr node:internal/bootstrap/switches/is_main_thread:137:19
+      1  100.0%            Function: ~<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/debug/src/node.js:1:1
+      2    2.1%      LazyCompile: ~Module._extensions..json node:internal/modules/cjs/loader:1162:39
+      2  100.0%        Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      2  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      2  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      2    2.1%      Function: ^write_ node:_http_outgoing:730:16
+      2  100.0%        Function: ^end node:_http_outgoing:833:45
+      2  100.0%          Function: ^send /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:111:25
+      2  100.0%            Function: ^sendStatus /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:369:37
+      2    2.1%      Function: ^writeHead node:_http_server:269:19
+      2  100.0%        Function: ^_implicitHeader node:_http_server:264:68
+      2  100.0%          Function: ^write_ node:_http_outgoing:730:16
+      2  100.0%            Function: ^end node:_http_outgoing:833:45
+      2    2.1%      Function: ^nextTick node:internal/process/task_queues:104:18
+      1   50.0%        Function: ^resume node:internal/streams/readable:977:16
+      1  100.0%          Function: ^Readable.resume node:internal/streams/readable:963:37
+      1  100.0%            Function: ^_dump node:_http_incoming:364:49
+      1   50.0%        Function: ^endReadable node:internal/streams/readable:1328:21
+      1  100.0%          Function: ^Readable.read node:internal/streams/readable:394:35
+      1  100.0%            Function: ^resume_ node:internal/streams/readable:984:17
+      2    2.1%      Function: ^digest node:internal/crypto/hash:115:40
+      2  100.0%        Function: ^entitytag /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/etag/index.js:39:20
+      2  100.0%          Function: ^etag /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/etag/index.js:70:15
+      2  100.0%            Function: ^generateETag /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/utils.js:273:32
+      2    2.1%      Function: ^clearIncoming node:_http_server:749:23
+      2  100.0%        Function: ^resOnFinish node:_http_server:788:21
+      2  100.0%          Function: ^emit node:events:474:44
+      2  100.0%            Function: ^onFinish node:_http_outgoing:828:18
+      2    2.1%      Function: ^_writeRaw node:_http_outgoing:344:19
+      2  100.0%        Function: ^_send node:_http_outgoing:319:49
+      2  100.0%          Function: ^write_ node:_http_outgoing:730:16
+      2  100.0%            Function: ^end node:_http_outgoing:833:45
+      2    2.1%      Function: ^_dump node:_http_incoming:364:49
+      2  100.0%        Function: ^resOnFinish node:_http_server:788:21
+      2  100.0%          Function: ^emit node:events:474:44
+      2  100.0%            Function: ^onFinish node:_http_outgoing:828:18
+      1    1.1%      LazyCompile: ~writeHead node:_http_server:269:19
+      1  100.0%        LazyCompile: ~_implicitHeader node:_http_server:264:68
+      1  100.0%          LazyCompile: ~write_ node:_http_outgoing:730:16
+      1  100.0%            LazyCompile: ~end node:_http_outgoing:833:45
+      1    1.1%      LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%        LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%          LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      1  100.0%            LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:70:31
+      1    1.1%      LazyCompile: ~route /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/index.js:504:29
+      1  100.0%        LazyCompile: ~proto.<computed> /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/index.js:521:27
+      1  100.0%          Function: ~<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/src/routes/prime.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1057:37
+      1    1.1%      LazyCompile: ~realpathSync node:fs:2412:22
+      1  100.0%        LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%          LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%            LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      1    1.1%      LazyCompile: ~readPackage node:internal/modules/cjs/loader:290:21
+      1  100.0%        LazyCompile: ~resolveExports node:internal/modules/cjs/loader:472:24
+      1  100.0%          LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%            LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1    1.1%      LazyCompile: ~pushAsyncContext node:internal/async_hooks:540:26
+      1  100.0%        LazyCompile: ~emitBeforeScript node:internal/async_hooks:510:26
+      1  100.0%          LazyCompile: ~processTicksAndRejections node:internal/process/task_queues:68:35
+      1    1.1%      LazyCompile: ~parseurl /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/parseurl/index.js:35:19
+      1  100.0%        LazyCompile: ~getPathname /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/index.js:539:21
+      1  100.0%          LazyCompile: ~next /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/index.js:177:16
+      1  100.0%            LazyCompile: ~handle /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/index.js:136:31
+      1    1.1%      LazyCompile: ~parseQueryStringKeys /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/qs/lib/parse.js:150:46
+      1  100.0%        Function: ^module.exports /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/qs/lib/parse.js:239:27
+      1  100.0%          Function: ^parseExtendedQueryString /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/utils.js:289:34
+      1  100.0%            Function: ^query /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/middleware/query.js:39:24
+      1    1.1%      LazyCompile: ~onParserExecuteCommon node:_http_server:691:31
+      1  100.0%        Function: ^onParserExecute node:_http_server:634:25
+      1    1.1%      LazyCompile: ~listOnTimeout node:internal/timers:507:25
+      1  100.0%        LazyCompile: ~processTimers node:internal/timers:487:25
+      1    1.1%      LazyCompile: ~isArrayIndex node:internal/modules/esm/resolve:547:22
+      1  100.0%        LazyCompile: ~resolvePackageTarget node:internal/modules/esm/resolve:553:30
+      1  100.0%          LazyCompile: ~resolvePackageTarget node:internal/modules/esm/resolve:553:30
+      1  100.0%            LazyCompile: ~packageExportsResolve node:internal/modules/esm/resolve:656:31
+      1    1.1%      LazyCompile: ~hasHooks node:internal/async_hooks:471:18
+      1  100.0%        LazyCompile: ~emitAfterScript node:internal/async_hooks:518:25
+      1  100.0%          LazyCompile: ~processTicksAndRejections node:internal/process/task_queues:68:35
+      1    1.1%      LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:41:35
+      1  100.0%        LazyCompile: ~getStderr node:internal/bootstrap/switches/is_main_thread:137:19
+      1  100.0%          Function: ~<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/debug/src/node.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1057:37
+      1    1.1%      LazyCompile: ~createServerHandle node:net:1225:28
+      1  100.0%        LazyCompile: ~setupListenHandle node:net:1283:27
+      1  100.0%          LazyCompile: ~listenInCluster node:net:1368:25
+      1  100.0%            LazyCompile: ~Server.listen node:net:1410:35
+      1    1.1%      LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%        LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%          LazyCompile: ~initializeCJSLoader node:internal/bootstrap/pre_execution:414:29
+      1  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:22:36
+      1    1.1%      LazyCompile: ~afterWrite node:internal/streams/writable:487:20
+      1  100.0%        LazyCompile: ~afterWriteTick node:internal/streams/writable:482:24
+      1  100.0%          LazyCompile: ~processTicksAndRejections node:internal/process/task_queues:68:35
+      1    1.1%      LazyCompile: ~Readable node:internal/streams/readable:181:18
+      1  100.0%        LazyCompile: ~IncomingMessage node:_http_incoming:51:25
+      1  100.0%          LazyCompile: ~parserOnHeadersComplete node:_http_common:77:33
+      1    1.1%      LazyCompile: ~Module._resolveLookupPaths node:internal/modules/cjs/loader:667:38
+      1  100.0%        LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%          LazyCompile: ~Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%            LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:70:31
+      1    1.1%      LazyCompile: ~Mime.lookup /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/mime/mime.js:69:33
+      1  100.0%        Function: ~<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/mime/mime.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1057:37
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1    1.1%      LazyCompile: ~EventEmitter.init node:events:326:29
+      1  100.0%        Function: ^EventEmitter node:events:207:22
+      1  100.0%          Function: ^Stream node:internal/streams/legacy:10:16
+      1  100.0%            LazyCompile: ~Readable node:internal/streams/readable:181:18
+      1    1.1%      LazyCompile: ~<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/src/routes/file.js:18:28
+      1  100.0%        Function: ^handle /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%          LazyCompile: ~next /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/route.js:116:16
+      1  100.0%            Function: ^dispatch /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/route.js:98:45
+      1    1.1%      LazyCompile: ~<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/index.js:520:39
+      1  100.0%        t auto node::options_parser::OptionsParser<node::EnvironmentOptions>::Convert<node::DebugOptions>(node::options_parser::OptionsParser<node::DebugOptions>::Implication, node::options_parser::OptionsParser<node::DebugOptions>* (node::EnvironmentOptions::*)())
+      1  100.0%          Function: ~<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/index.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1057:37
+      1    1.1%      Function: ~<anonymous> node:internal/modules/cjs/helpers:1:1
+      1  100.0%        LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%          LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%            Function: ~<anonymous> node:internal/source_map/source_map_cache:1:1
+      1    1.1%      Function: ~<anonymous> node:internal/fs/rimraf:1:1
+      1  100.0%        LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%          LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%            Function: ~<anonymous> node:internal/fs/promises:1:1
+      1    1.1%      Function: ~<anonymous> node:internal/cluster/worker:1:1
+      1  100.0%        Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%          Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%            Function: ~<anonymous> node:internal/cluster/primary:1:1
+      1    1.1%      Function: ~<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/src/server.js:1:1
+      1  100.0%        LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1057:37
+      1  100.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1  100.0%            LazyCompile: ~Module.load node:internal/modules/cjs/loader:969:33
+      1    1.1%      Function: ~<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/src/app.js:1:1
+      1  100.0%        LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1057:37
+      1  100.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1  100.0%            LazyCompile: ~Module.load node:internal/modules/cjs/loader:969:33
+      1    1.1%      Function: ^stat node:internal/modules/cjs/loader:151:14
+      1  100.0%        Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      1  100.0%          Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      1  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1    1.1%      Function: ^sendStatus /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:369:37
+      1  100.0%        Function: ^<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/src/routes/file.js:18:28
+      1  100.0%          Function: ^handle /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%            Function: ^next /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/route.js:116:16
+      1    1.1%      Function: ^resolve node:path:1091:10
+      1  100.0%        Function: ^realpathSync node:fs:2412:22
+      1  100.0%          Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%            LazyCompile: ~tryFile node:internal/modules/cjs/loader:384:17
+      1    1.1%      Function: ^resOnFinish node:_http_server:788:21
+      1  100.0%        Function: ^emit node:events:474:44
+      1  100.0%          Function: ^onFinish node:_http_outgoing:828:18
+      1  100.0%            Function: ^callback node:internal/streams/writable:550:44
+      1    1.1%      Function: ^res.get /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:811:19
+      1  100.0%        Function: ^send /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:111:25
+      1  100.0%          Function: ^sendStatus /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:369:37
+      1  100.0%            Function: ^<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/src/routes/file.js:18:28
+      1    1.1%      Function: ^readableAddChunk node:internal/streams/readable:236:26
+      1  100.0%        Function: ^Readable.push node:internal/streams/readable:227:35
+      1  100.0%          Function: ^parserOnMessageComplete node:_http_common:147:33
+      1    1.1%      Function: ^parseQueryStringValues /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/qs/lib/parse.js:51:50
+      1  100.0%        Function: ^module.exports /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/qs/lib/parse.js:239:27
+      1  100.0%          Function: ^parseExtendedQueryString /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/utils.js:289:34
+      1  100.0%            Function: ^query /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/middleware/query.js:39:24
+      1    1.1%      Function: ^handle /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/index.js:136:31
+      1  100.0%        Function: ^handle /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/application.js:165:29
+      1  100.0%          Function: ^app /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/express.js:38:21
+      1  100.0%            Function: ^emit node:events:474:44
+      1    1.1%      Function: ^expressInit /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/middleware/init.js:29:30
+      1  100.0%        Function: ^handle /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%          Function: ^trim_prefix /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/index.js:293:23
+      1  100.0%            Function: ^<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/index.js:280:64
+      1    1.1%      Function: ^endReadableNT node:internal/streams/readable:1338:23
+      1  100.0%        Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    1.1%      Function: ^endReadable node:internal/streams/readable:1328:21
+      1  100.0%        Function: ^Readable.read node:internal/streams/readable:394:35
+      1  100.0%          Function: ^resume_ node:internal/streams/readable:984:17
+      1  100.0%            Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    1.1%      Function: ^emit node:events:474:44
+      1  100.0%        Function: ^_finish node:_http_outgoing:909:53
+      1  100.0%          Function: ^_finish node:_http_server:203:52
+      1  100.0%            Function: ^end node:_http_outgoing:833:45
+      1    1.1%      Function: ^_send node:_http_outgoing:319:49
+      1  100.0%        Function: ^write_ node:_http_outgoing:730:16
+      1  100.0%          Function: ^end node:_http_outgoing:833:45
+      1  100.0%            Function: ^send /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:111:25
+      1    1.1%      Function: ^_finish node:_http_server:203:52
+      1  100.0%        Function: ^end node:_http_outgoing:833:45
+      1  100.0%          Function: ^send /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:111:25
+      1  100.0%            Function: ^sendStatus /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:369:37
+      1    1.1%      Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%        Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      1    1.1%      Function: ^<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/request.js:467:36
+      1  100.0%        t auto node::options_parser::OptionsParser<node::EnvironmentOptions>::Convert<node::DebugOptions>(node::options_parser::OptionsParser<node::DebugOptions>::Implication, node::options_parser::OptionsParser<node::DebugOptions>* (node::EnvironmentOptions::*)())
+      1  100.0%          Function: ^send /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:111:25
+      1  100.0%            Function: ^sendStatus /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:369:37
+      6    2.7%    Function: ^parserOnHeadersComplete node:_http_common:77:33
+      5    2.3%    Function: ^_writeRaw node:_http_outgoing:344:19
+      5  100.0%      Function: ^_send node:_http_outgoing:319:49
+      4   80.0%        Function: ^write_ node:_http_outgoing:730:16
+      4  100.0%          Function: ^end node:_http_outgoing:833:45
+      4  100.0%            Function: ^send /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:111:25
+      1   20.0%        Function: ^end node:_http_outgoing:833:45
+      1  100.0%          Function: ^send /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:111:25
+      1  100.0%            Function: ^sendStatus /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:369:37
+      3    1.4%    Function: ^writeHead node:_http_server:269:19
+      3  100.0%      Function: ^_implicitHeader node:_http_server:264:68
+      3  100.0%        Function: ^write_ node:_http_outgoing:730:16
+      3  100.0%          Function: ^end node:_http_outgoing:833:45
+      3  100.0%            Function: ^send /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:111:25
+      3    1.4%    Function: ^send /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:111:25
+      3  100.0%      Function: ^sendStatus /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:369:37
+      3  100.0%        Function: ^<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/src/routes/file.js:18:28
+      3  100.0%          Function: ^handle /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/layer.js:86:49
+      3  100.0%            Function: ^next /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/route.js:116:16
+      3    1.4%    Function: ^end node:_http_outgoing:833:45
+      3  100.0%      Function: ^send /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:111:25
+      3  100.0%        Function: ^sendStatus /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/response.js:369:37
+      3  100.0%          Function: ^<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/src/routes/file.js:18:28
+      3  100.0%            Function: ^handle /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/layer.js:86:49
+      3    1.4%    Function: ^emitAfterScript node:internal/async_hooks:518:25
+      3  100.0%      Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+
+     61    8.4%  T node::native_module::NativeModuleEnv::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+     61  100.0%    t auto node::options_parser::OptionsParser<node::EnvironmentOptions>::Convert<node::DebugOptions>(node::options_parser::OptionsParser<node::DebugOptions>::Implication, node::options_parser::OptionsParser<node::DebugOptions>* (node::EnvironmentOptions::*)())
+     40   65.6%      Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     36   90.0%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      7   19.4%          Function: ~<anonymous> node:http:1:1
+      7  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      7   19.4%          Function: ~<anonymous> node:crypto:1:1
+      7  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      6   16.7%          Function: ~<anonymous> node:internal/child_process:1:1
+      6  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3    8.3%          Function: ~<anonymous> node:_http_client:1:1
+      3  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    5.6%          LazyCompile: ~lazyRequire node:internal/crypto/util:67:21
+      2  100.0%            LazyCompile: ~get node:crypto:287:8
+      2    5.6%          Function: ~<anonymous> node:child_process:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.8%          LazyCompile: ~lazyLoadStreams node:fs:2845:25
+      1  100.0%            LazyCompile: ~get ReadStream node:fs:2988:17
+      1    2.8%          Function: ~<anonymous> node:tty:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.8%          Function: ~<anonymous> node:net:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.8%          Function: ~<anonymous> node:internal/crypto/util:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.8%          Function: ~<anonymous> node:internal/crypto/pbkdf2:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.8%          Function: ~<anonymous> node:internal/crypto/hkdf:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.8%          Function: ~<anonymous> node:internal/cluster/primary:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.8%          Function: ~<anonymous> node:cluster:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.8%          Function: ~<anonymous> node:_http_common:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3    7.5%        Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      3  100.0%          Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      3  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1    2.5%        LazyCompile: ~compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      1  100.0%          LazyCompile: ~loadNativeModule node:internal/modules/cjs/helpers:44:26
+      1  100.0%            LazyCompile: ~Module._load node:internal/modules/cjs/loader:757:24
+     21   34.4%      LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     21  100.0%        LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      4   19.0%          Function: ~<anonymous> node:internal/process/esm_loader:1:1
+      4  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      4   19.0%          Function: ~<anonymous> node:internal/modules/esm/loader:1:1
+      4  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3   14.3%          LazyCompile: ~initializeCJSLoader node:internal/bootstrap/pre_execution:414:29
+      3  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:22:36
+      2    9.5%          Function: ~<anonymous> node:internal/modules/esm/get_source:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    4.8%          LazyCompile: ~initializeSourceMapsHandlers node:internal/bootstrap/pre_execution:453:38
+      1  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:22:36
+      1    4.8%          LazyCompile: ~initializeReport node:internal/bootstrap/pre_execution:175:26
+      1  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:22:36
+      1    4.8%          Function: ~<anonymous> node:internal/source_map/source_map_cache:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    4.8%          Function: ~<anonymous> node:internal/modules/esm/translators:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    4.8%          Function: ~<anonymous> node:internal/modules/esm/module_map:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    4.8%          Function: ~<anonymous> node:internal/modules/esm/load:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    4.8%          Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    4.8%          Function: ~<anonymous> node:internal/bootstrap/pre_execution:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+
+     36    5.0%  T node::contextify::ContextifyContext::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+     36  100.0%    t auto node::options_parser::OptionsParser<node::EnvironmentOptions>::Convert<node::DebugOptions>(node::options_parser::OptionsParser<node::DebugOptions>::Implication, node::options_parser::OptionsParser<node::DebugOptions>* (node::EnvironmentOptions::*)())
+     33   91.7%      Function: ^compileFunction node:vm:308:25
+     30   90.9%        Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+     25   83.3%          Function: ^Module._compile node:internal/modules/cjs/loader:1057:37
+     17   68.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      8   32.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      5   16.7%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1057:37
+      5  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      3    9.1%        LazyCompile: ~wrapSafe node:internal/modules/cjs/loader:1017:18
+      3  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1057:37
+      3  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      3    8.3%      LazyCompile: ~compileFunction node:vm:308:25
+      3  100.0%        LazyCompile: ~wrapSafe node:internal/modules/cjs/loader:1017:18
+      3  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1057:37
+      3  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1112:37
+
+     25    3.4%  /usr/lib/system/libsystem_pthread.dylib
+     23   92.0%    t auto node::options_parser::OptionsParser<node::EnvironmentOptions>::Convert<node::DebugOptions>(node::options_parser::OptionsParser<node::DebugOptions>::Implication, node::options_parser::OptionsParser<node::DebugOptions>* (node::EnvironmentOptions::*)())
+      3   13.0%      LazyCompile: ~value node:internal/console/constructor:321:20
+      3  100.0%        LazyCompile: ~log node:internal/console/constructor:359:6
+      3  100.0%          t auto node::options_parser::OptionsParser<node::EnvironmentOptions>::Convert<node::DebugOptions>(node::options_parser::OptionsParser<node::DebugOptions>::Implication, node::options_parser::OptionsParser<node::DebugOptions>* (node::EnvironmentOptions::*)())
+      3  100.0%            Function: ~<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/src/server.js:1:1
+      2    8.7%      LazyCompile: ~setupWarningHandler node:internal/bootstrap/pre_execution:134:29
+      2  100.0%        LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:22:36
+      2  100.0%          Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      2    8.7%      LazyCompile: ~realpathSync node:fs:2412:22
+      2  100.0%        LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      2  100.0%          LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      2  100.0%            LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      2    8.7%      LazyCompile: ~patchProcessObject node:internal/bootstrap/pre_execution:81:28
+      2  100.0%        LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:22:36
+      2  100.0%          Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      2    8.7%      LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:41:35
+      2  100.0%        LazyCompile: ~getStderr node:internal/bootstrap/switches/is_main_thread:137:19
+      2  100.0%          Function: ~<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/debug/src/node.js:1:1
+      2  100.0%            LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1057:37
+      1    4.3%      t auto node::options_parser::OptionsParser<node::EnvironmentOptions>::Convert<node::DebugOptions>(node::options_parser::OptionsParser<node::DebugOptions>::Implication, node::options_parser::OptionsParser<node::DebugOptions>* (node::EnvironmentOptions::*)())
+      1  100.0%        Function: ~<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/src/server.js:1:1
+      1  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1057:37
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1    4.3%      LazyCompile: ~wrapSafe node:internal/modules/cjs/loader:1017:18
+      1  100.0%        LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1057:37
+      1  100.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1  100.0%            LazyCompile: ~Module.load node:internal/modules/cjs/loader:969:33
+      1    4.3%      LazyCompile: ~setupPerfHooks node:internal/bootstrap/pre_execution:220:24
+      1  100.0%        LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:22:36
+      1  100.0%          Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    4.3%      LazyCompile: ~inspect node:internal/util/inspect:292:17
+      1  100.0%        LazyCompile: ~formatWithOptionsInternal node:internal/util/inspect:2048:35
+      1  100.0%          LazyCompile: ~formatWithOptions node:internal/util/inspect:2024:27
+      1  100.0%            LazyCompile: ~value node:internal/console/constructor:321:20
+      1    4.3%      LazyCompile: ~createHttpErrorConstructor /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/http-errors/index.js:112:37
+      1  100.0%        Function: ~<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/http-errors/index.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1057:37
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1    4.3%      LazyCompile: ~_storeHeader node:_http_outgoing:374:22
+      1  100.0%        LazyCompile: ~writeHead node:_http_server:269:19
+      1  100.0%          Function: ^_implicitHeader node:_http_server:264:68
+      1  100.0%            LazyCompile: ~write_ node:_http_outgoing:730:16
+      1    4.3%      LazyCompile: ~_flushOutput node:_http_outgoing:951:63
+      1  100.0%        LazyCompile: ~_writeRaw node:_http_outgoing:344:19
+      1  100.0%          LazyCompile: ~_send node:_http_outgoing:319:49
+      1  100.0%            LazyCompile: ~write_ node:_http_outgoing:730:16
+      1    4.3%      LazyCompile: ~Duplex node:internal/streams/duplex:52:16
+      1  100.0%        LazyCompile: ~Socket node:net:283:16
+      1  100.0%          LazyCompile: ~WriteStream node:tty:85:21
+      1  100.0%            LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:41:35
+      1    4.3%      Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    4.3%      Function: ~<anonymous> node:internal/fs/promises:1:1
+      1  100.0%        LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%          LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%            Function: ~<anonymous> node:internal/modules/esm/get_source:1:1
+      1    4.3%      Function: ~<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/debug/src/node.js:1:1
+      1  100.0%        LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1057:37
+      1  100.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1  100.0%            LazyCompile: ~Module.load node:internal/modules/cjs/loader:969:33
+
+     20    2.8%  T _host_get_special_port
+
+     18    2.5%  T _host_request_notification
+      8   44.4%    t auto node::options_parser::OptionsParser<node::EnvironmentOptions>::Convert<node::DebugOptions>(node::options_parser::OptionsParser<node::DebugOptions>::Implication, node::options_parser::OptionsParser<node::DebugOptions>* (node::EnvironmentOptions::*)())
+      2   25.0%      LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      2  100.0%        LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      2  100.0%          LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      2  100.0%            LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:70:31
+      2   25.0%      LazyCompile: ~resolve node:path:1091:10
+      1   50.0%        LazyCompile: ~patchProcessObject node:internal/bootstrap/pre_execution:81:28
+      1  100.0%          LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:22:36
+      1  100.0%            Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1   50.0%        LazyCompile: ~Module._initPaths node:internal/modules/cjs/loader:1231:29
+      1  100.0%          LazyCompile: ~initializeCJSLoader node:internal/bootstrap/pre_execution:414:29
+      1  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:22:36
+      1   12.5%      LazyCompile: ~isignored /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/depd/index.js:153:20
+      1  100.0%        LazyCompile: ~depd /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/depd/index.js:103:15
+      1  100.0%          Function: ~<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/body-parser/index.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1057:37
+      1   12.5%      LazyCompile: ~getCheckedFunction node:os:63:28
+      1  100.0%        Function: ~<anonymous> node:os:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            LazyCompile: ~compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      1   12.5%      LazyCompile: ~createConvenienceMethod node:zlib:788:33
+      1  100.0%        Function: ~<anonymous> node:zlib:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      1   12.5%      LazyCompile: ~createClientErrorConstructor /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/http-errors/index.js:127:39
+      1  100.0%        LazyCompile: ~forEachCode /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/http-errors/index.js:259:38
+      1  100.0%          t auto node::options_parser::OptionsParser<node::EnvironmentOptions>::Convert<node::DebugOptions>(node::options_parser::OptionsParser<node::DebugOptions>::Implication, node::options_parser::OptionsParser<node::DebugOptions>* (node::EnvironmentOptions::*)())
+      1  100.0%            LazyCompile: ~populateConstructorExports /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/http-errors/index.js:258:37
+
+     18    2.5%  /usr/lib/system/libsystem_kernel.dylib
+      2   11.1%    t auto node::options_parser::OptionsParser<node::EnvironmentOptions>::Convert<node::DebugOptions>(node::options_parser::OptionsParser<node::DebugOptions>::Implication, node::options_parser::OptionsParser<node::DebugOptions>* (node::EnvironmentOptions::*)())
+      1   50.0%      LazyCompile: ~realpathSync node:fs:2412:22
+      1  100.0%        LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%          LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%            LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      1   50.0%      LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:22:36
+      1  100.0%        Function: ~<anonymous> node:internal/main/run_main_module:1:1
+
+     15    2.1%  /usr/lib/system/libsystem_c.dylib
+     13   86.7%    t auto node::options_parser::OptionsParser<node::EnvironmentOptions>::Convert<node::DebugOptions>(node::options_parser::OptionsParser<node::DebugOptions>::Implication, node::options_parser::OptionsParser<node::DebugOptions>* (node::EnvironmentOptions::*)())
+      3   23.1%      LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:22:36
+      3  100.0%        Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      2   15.4%      LazyCompile: ~getCheckedFunction node:os:63:28
+      2  100.0%        Function: ~<anonymous> node:os:1:1
+      2  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2  100.0%            LazyCompile: ~compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      1    7.7%      LazyCompile: ~value node:internal/console/constructor:321:20
+      1  100.0%        LazyCompile: ~log node:internal/console/constructor:359:6
+      1  100.0%          t auto node::options_parser::OptionsParser<node::EnvironmentOptions>::Convert<node::DebugOptions>(node::options_parser::OptionsParser<node::DebugOptions>::Implication, node::options_parser::OptionsParser<node::DebugOptions>* (node::EnvironmentOptions::*)())
+      1  100.0%            Function: ~<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/src/server.js:1:1
+      1    7.7%      LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%        LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%          LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      1  100.0%            LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:70:31
+      1    7.7%      LazyCompile: ~processTicksAndRejections node:internal/process/task_queues:68:35
+      1    7.7%      LazyCompile: ~parserOnIncoming node:_http_server:852:26
+      1  100.0%        LazyCompile: ~parserOnHeadersComplete node:_http_common:77:33
+      1    7.7%      LazyCompile: ~nextTick node:internal/process/task_queues:104:18
+      1  100.0%        LazyCompile: ~onwrite node:internal/streams/writable:425:17
+      1  100.0%          LazyCompile: ~afterWriteDispatched node:internal/stream_base_commons:155:30
+      1  100.0%            LazyCompile: ~writeGeneric node:internal/stream_base_commons:147:22
+      1    7.7%      LazyCompile: ~init /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/application.js:64:25
+      1  100.0%        LazyCompile: ~createApplication /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/express.js:37:27
+      1  100.0%          Function: ~<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/src/app.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1057:37
+      1    7.7%      Function: ~<anonymous> node:internal/fs/rimraf:1:1
+      1  100.0%        LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%          LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%            Function: ~<anonymous> node:internal/fs/promises:1:1
+      1    7.7%      Function: ^fastparse /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/parseurl/index.js:95:20
+      1  100.0%        LazyCompile: ~parseurl /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/parseurl/index.js:35:19
+      1  100.0%          LazyCompile: ~getPathname /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/index.js:539:21
+      1  100.0%            LazyCompile: ~next /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/index.js:177:16
+
+     13    1.8%  /usr/lib/system/libsystem_malloc.dylib
+     10   76.9%    t auto node::options_parser::OptionsParser<node::EnvironmentOptions>::Convert<node::DebugOptions>(node::options_parser::OptionsParser<node::DebugOptions>::Implication, node::options_parser::OptionsParser<node::DebugOptions>* (node::EnvironmentOptions::*)())
+      2   20.0%      t auto node::options_parser::OptionsParser<node::EnvironmentOptions>::Convert<node::DebugOptions>(node::options_parser::OptionsParser<node::DebugOptions>::Implication, node::options_parser::OptionsParser<node::DebugOptions>* (node::EnvironmentOptions::*)())
+      1   50.0%        LazyCompile: ~Socket node:net:283:16
+      1  100.0%          LazyCompile: ~WriteStream node:tty:85:21
+      1  100.0%            LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:41:35
+      1   50.0%        Function: ^realpathSync node:fs:2412:22
+      1  100.0%          Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%            Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      1   10.0%      LazyCompile: ~readSync node:fs:684:18
+      1  100.0%        LazyCompile: ~tryReadSync node:fs:429:21
+      1  100.0%          LazyCompile: ~readFileSync node:fs:450:22
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1   10.0%      LazyCompile: ~onStreamRead node:internal/stream_base_commons:167:22
+      1   10.0%      LazyCompile: ~isRegExp /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/qs/lib/utils.js:214:33
+      1  100.0%        LazyCompile: ~normalizeParseOptions /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/qs/lib/parse.js:204:59
+      1  100.0%          LazyCompile: ~module.exports /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/qs/lib/parse.js:239:27
+      1  100.0%            LazyCompile: ~parseExtendedQueryString /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/utils.js:289:34
+      1   10.0%      LazyCompile: ~isEmpty node:internal/fixed_queue:95:10
+      1  100.0%        LazyCompile: ~nextTick node:internal/process/task_queues:104:18
+      1  100.0%          LazyCompile: ~onwrite node:internal/streams/writable:425:17
+      1  100.0%            LazyCompile: ~afterWriteDispatched node:internal/stream_base_commons:155:30
+      1   10.0%      LazyCompile: ~getPathFromURLPosix node:internal/url:1395:29
+      1  100.0%        LazyCompile: ~fileURLToPath node:internal/url:1413:23
+      1  100.0%          LazyCompile: ~finalizeEsmResolution node:internal/modules/cjs/loader:939:31
+      1  100.0%            Function: ^resolveExports node:internal/modules/cjs/loader:472:24
+      1   10.0%      LazyCompile: ~dispatch /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/route.js:98:45
+      1  100.0%        Function: ^handle /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%          Function: ^<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/index.js:280:64
+      1  100.0%            Function: ^process_params /Users/Lalo/Work/Coderhouse/clases/32-profiling/node_modules/express/lib/router/index.js:340:47
+      1   10.0%      LazyCompile: ~assignSocket node:_http_server:239:62
+      1  100.0%        LazyCompile: ~parserOnIncoming node:_http_server:852:26
+      1  100.0%          LazyCompile: ~parserOnHeadersComplete node:_http_common:77:33
+      1   10.0%      LazyCompile: ~Timeout node:internal/timers:167:17
+      1  100.0%        LazyCompile: ~setUnrefTimeout node:internal/timers:372:25
+      1  100.0%          LazyCompile: ~cache node:internal/http:26:15
+      1  100.0%            LazyCompile: ~utcDate node:internal/http:21:17
+
+      8    1.1%  t node::fs::WriteBuffer(v8::FunctionCallbackInfo<v8::Value> const&)
+      8  100.0%    t auto node::options_parser::OptionsParser<node::EnvironmentOptions>::Convert<node::DebugOptions>(node::options_parser::OptionsParser<node::DebugOptions>::Implication, node::options_parser::OptionsParser<node::DebugOptions>* (node::EnvironmentOptions::*)())
+      8  100.0%      Function: ^writeSync node:fs:858:19
+      8  100.0%        Function: ^writeFileSync node:fs:2146:23
+      8  100.0%          Function: ^appendFileSync node:fs:2209:24
+      8  100.0%            Function: ^<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/src/routes/file.js:18:28
+
+      8    1.1%  T node::fs::Close(v8::FunctionCallbackInfo<v8::Value> const&)
+      8  100.0%    t auto node::options_parser::OptionsParser<node::EnvironmentOptions>::Convert<node::DebugOptions>(node::options_parser::OptionsParser<node::DebugOptions>::Implication, node::options_parser::OptionsParser<node::DebugOptions>* (node::EnvironmentOptions::*)())
+      8  100.0%      Function: ^closeSync node:fs:526:19
+      8  100.0%        Function: ^writeFileSync node:fs:2146:23
+      8  100.0%          Function: ^appendFileSync node:fs:2209:24
+      8  100.0%            Function: ^<anonymous> /Users/Lalo/Work/Coderhouse/clases/32-profiling/src/routes/file.js:18:28
+
