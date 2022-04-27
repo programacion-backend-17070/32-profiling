@@ -4,24 +4,27 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/server.js",
+    "start": "0x --collect-only ./src/server.js",
     "start:cluster": "MODO=cluster node ./src/server.js",
     "test:artillery": "artillery quick --count 50 -n 40 http://localhost:3030/prime?max=100000 > result_fork.txt",
     "test:artillery-cluster": "artillery quick --count 50 -n 40 http://localhost:3030/prime?max=100000 > result_cluster.txt",
     "test:artillery-bloq": "artillery quick --count 10 -n 50 http://localhost:3030/file/append-bloq?txt=Lalo > result_bloq.txt",
     "test:artillery-nobloq": "artillery quick --count 10 -n 50 http://localhost:3030/file/append?txt=Lalo > result_nobloq.txt",
     "curl": "curl -X GET 'http://localhost:3030/file/append?txt=Lalo'",
-    "curl-bloq": "curl -X GET 'http://localhost:3030/file/append-bloq?txt=Lalo'"
+    "curl-bloq": "curl -X GET 'http://localhost:3030/file/append-bloq?txt=Lalo'",
+    "test": "node ./tests/benchmark.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "artillery": "^2.0.0-14",
+    "autocannon": "^7.8.1",
     "crypto-js": "^4.1.1",
     "express": "^4.18.0"
   },
   "devDependencies": {
+    "0x": "^5.2.1",
     "nodemon": "^2.0.15"
   }
 }
